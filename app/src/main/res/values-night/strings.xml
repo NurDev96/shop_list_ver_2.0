@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button" />
+    <string name="count_hint" />
+    <string name="name_hint" />
+</resources>
