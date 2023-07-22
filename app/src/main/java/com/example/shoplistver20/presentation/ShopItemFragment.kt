@@ -3,6 +3,7 @@ package com.example.shoplistver20.presentation
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,7 @@ class ShopItemFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseParams()
+        Log.d("ShopItemFragment","onCreate")
     }
 
     override fun onCreateView(
@@ -127,7 +129,7 @@ class ShopItemFragment : Fragment() {
         }
         screenMode = mode
         if (screenMode == MODE_EDIT) {
-            if (!screenMode.contains(SHOP_ITEM_ID)) {
+            if (!args2.containsKey(SHOP_ITEM_ID)) {
                 throw RuntimeException("Shop Item id is absent")
             }
             shopItemId = args2.getInt(SHOP_ITEM_ID, ShopItem.UNDEFINED_ID)
